@@ -14,7 +14,7 @@ app.use(express.static(__dirname + "/public"));
 app.set('view engine', 'ejs');
 
 //connect to the db
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/shorturl');
+mongoose.connect( process.env.MONGOLAB_URI || 'mongodb://localhost/shorturl');
 
 
 // home page
