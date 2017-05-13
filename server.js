@@ -38,7 +38,7 @@ app.get('/new/:url(*)',function(req,res){
                 console.log("ERROR");
             }else{
                 if(data){
-                     res.json(data);
+                     res.json({originalURL: data.originalURL,shorterURL: data.shorterURL});
                  }else{
                     var short = Math.floor(Math.random() * 100000).toString();
                     var date = new db({
@@ -50,7 +50,7 @@ app.get('/new/:url(*)',function(req,res){
                             console.log(err);
                         }
                     })
-                    res.json(date); 
+                    res.json({originalURL: date.originalURL,shorterURL: date.shorterURL}); 
                 }
             }
             
